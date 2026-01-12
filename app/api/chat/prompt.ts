@@ -17,7 +17,5 @@ export function getSystemMessages(candidato: Candidato): ModelMessage[] {
     propuestas: candidato.propuestas,
   })
 
-  console.log(candidatoMessages)
-
   return [baseMessage, ...candidatoMessages]
 }
