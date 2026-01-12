@@ -13,12 +13,12 @@ export const claudiaDobles: Candidato = {
   ideologia: "Centro izquierda progresista",
   posicionPolitica: "Económicamente Izquierda",
   redesSociales: {
-    twitter: "https://twitter.com/laurafernandez",
-    instagram: "https://instagram.com/laurafernandez",
-    facebook: "https://facebook.com/laurafernandezcr",
+    twitter: "https://x.com/ClaudiaDobles",
+    instagram: "https://www.instagram.com/claudobles/?hl=es",
+    facebook: "https://www.facebook.com/ClaudiaDoblesC",
     tiktok: "https://tiktok.com/@laurafernandez",
-    youtube: "https://youtube.com/@laurafernandez",
-    web: "https://laurafernandez.cr",
+    youtube: "https://www.youtube.com/@claudobles/videos",
+    web: "",
   },
   logros: [
     "Arquitecta con 15 años de experiencia en movilidad urbana, vivienda social, participación comunitaria y cambio climático.",

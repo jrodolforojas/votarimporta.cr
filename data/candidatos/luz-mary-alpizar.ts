@@ -11,7 +11,7 @@ export const luzMaryAlpizar: Candidato = {
   colores: ["#44d72d", "#01119f"],
   ocupacion: "Consultora y Gerente General de Aproimsa S.A. Especialista en calidad y metrología.",
   ideologia: "Social Demócrata Moderno",
-  posicionPolitica: "Económicamente Izquierda",
+  posicionPolitica: "Centro-Derecha",
   redesSociales: {
     twitter: "https://twitter.com/laurafernandez",
     instagram: "https://instagram.com/laurafernandez",
