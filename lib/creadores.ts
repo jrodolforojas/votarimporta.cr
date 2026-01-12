@@ -35,13 +35,12 @@ export const creadores: Creador[] = [
   {
     id: "fabian-fonseca",
     nombre: "Fabián Fonseca",
-    ocupacion: "Politólogo y Economista",
-    bio: "Politólogo y economista comprometido con el fortalecimiento de la democracia costarricense. Su objetivo es reducir la brecha de información política y fomentar la participación ciudadana informada, especialmente entre los jóvenes.",
+    ocupacion: "Politólogo y Estudiante de Economía",
+    bio: "Politólogo y estudiante de economía comprometido con el fortalecimiento de la democracia costarricense. Interesado en el acceso a la información, la reducción de la brecha de información política y el fomento de la participación ciudadana informada.",
     foto: "/fabian-fonseca.webp",
     logros: [
-      "Investigador en temas de participación ciudadana y abstencionismo",
-      "Analista político con enfoque en políticas públicas",
-      "Promotor de la educación cívica en jóvenes costarricenses",
+      "Investigador en temas de agricultura, participación ciudadana, ciudades inteligentes y otros",
+      "Analista de políticas públicas",
     ],
     redesSociales: {
       linkedin: "https://www.linkedin.com/in/fabianfonsecar/",

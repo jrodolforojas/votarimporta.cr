@@ -71,7 +71,7 @@ Somos dos costarricenses comprometidos con la democracia:
       <img src="https://media.licdn.com/dms/image/v2/D4E03AQFY_tXD13_UhA/profile-displayphoto-shrink_800_800/B4EZaDerm9H0Ag-/0/1745962580770?e=1769644800&v=beta&t=ZJjyJ2Rr7nIYuQzYq78c0qlIj60V7FH_uF6tv9ouWCM" width="100" height="100" style="border-radius: 50%;" alt="Fabián Fonseca"><br>
       <strong>Fabián Fonseca</strong><br>
       <em>Politólogo y Economista</em><br><br>
-      Comprometido con el fortalecimiento de la democracia costarricense y la participación ciudadana.<br><br>
+      Comprometido con el fortalecimiento de la democracia costarricense. Interesado en el acceso a la información, la reducción de la brecha de información política y el fomento de la participación ciudadana informada.<br><br>
       <a href="https://www.linkedin.com/in/fabianfonsecar/">LinkedIn</a>
     </td>
   </tr>
