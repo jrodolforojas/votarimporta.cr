@@ -44,6 +44,7 @@ export const creadores: Creador[] = [
     ],
     redesSociales: {
       linkedin: "https://www.linkedin.com/in/fabianfonsecar/",
+      instagram: "https://www.instagram.com/fabian_fonseca05/"
     },
   },
 ]
