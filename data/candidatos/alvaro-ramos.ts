@@ -13,12 +13,12 @@ export const alvaroRamos: Candidato = {
   ideologia: "Socialdemocracia",
   posicionPolitica: "Centro-Izquierda",
   redesSociales: {
-    twitter: "https://twitter.com/laurafernandez",
-    instagram: "https://instagram.com/laurafernandez",
-    facebook: "https://facebook.com/laurafernandezcr",
-    tiktok: "https://tiktok.com/@laurafernandez",
-    youtube: "https://youtube.com/@laurafernandez",
-    web: "https://laurafernandez.cr",
+    twitter: "https://x.com/aramosc",
+    instagram: "https://www.instagram.com/alvaroramoschaves/?hl=es",
+    facebook: "https://www.facebook.com/alvaroramoscr",
+    tiktok: "https://www.tiktok.com/@alvaroramoscr_oficial?lang=en",
+    youtube: "https://www.youtube.com/@alvaroramoscr",
+    web: "https://www.plncr.org/",
   },
   logros: [
     "Viceministro de Ingresos del Ministerio de Hacienda.",

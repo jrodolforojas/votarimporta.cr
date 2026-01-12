@@ -10,8 +10,8 @@ export const lauraFernandes: Candidato = {
   color: "#01a4b6",
   colores: ["#01a4b6", "#ffffff"],
   ocupacion: "Economista, Ex-Ministra de Hacienda",
-  ideologia: "",
-  posicionPolitica: "Centro-Izquierda",
+  ideologia: "Liberal en lo económico y conservador en lo social",
+  posicionPolitica: "Centro",
   redesSociales: {
     twitter: "https://twitter.com/laurafernandez",
     instagram: "https://instagram.com/laurafernandez",

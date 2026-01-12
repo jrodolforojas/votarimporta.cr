@@ -13,12 +13,12 @@ export const juanCarlosHidalgo: Candidato = {
   ideologia: "Social cristianismo, liberalismo reformista, humanismo",
   posicionPolitica: "Centro-Izquierda",
   redesSociales: {
-    twitter: "https://twitter.com/laurafernandez",
-    instagram: "https://instagram.com/laurafernandez",
-    facebook: "https://facebook.com/laurafernandezcr",
-    tiktok: "https://tiktok.com/@laurafernandez",
-    youtube: "https://youtube.com/@laurafernandez",
-    web: "https://laurafernandez.cr",
+    twitter: "https://x.com/jchidalgo",
+    instagram: "https://www.instagram.com/juan_carlos_hidalgo_cr/?hl=es",
+    facebook: "https://www.facebook.com/juan.carlos.hidalgo.bogantes",
+    tiktok: "https://www.tiktok.com/@juan.carlos.hidalgo.cr?lang=en",
+    youtube: "https://www.youtube.com/@JuanCarlosHidalgo",
+    web: "https://partidounidad.com/",
   },
   logros: [
     "Analista del Cato Institute enfocado en América Latina (2007–2019).",

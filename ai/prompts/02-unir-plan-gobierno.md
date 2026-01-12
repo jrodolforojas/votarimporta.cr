@@ -23,7 +23,7 @@ Vas a analizar detalladamente las diferentes versiones del mismo plan de gobiern
 
    → si no está en una versión y en la otra sí, agrégala.
 
-   Toma en cuenta que la propiedad de `ejecucion` puede ser redundante con el problema o la solución, así que si hay un paso a paso claro de cómo se va realizar mejor omitirlo.
+   Toma en cuenta que la propiedad de `ejecucion` puede ser redundante con el problema o la solución, así que si no hay un paso a paso claro de cómo se va realizar mejor omitirlo.
 
 3. Analiza el nuevo documento con los otros dos planes de gobierno, sería una fase de checkeo para comprobar que la información en el nuevo documento concuerda con los anteriores. En caso de que hayas pasado por alto algún detalle o alguna propuesta es el momento para corregirlo.
 
@@ -154,4 +154,4 @@ IMPORTANTE: Puede que no haya ninguna propuesta clara para una área o categorí
 ## Estructura del prompt
 
 1. Vas a leer e interiorizar detalladamente el prompt.
-2. En el siguiente mensaje te envío ambos planes de gobierno en formato JSON y tu respuesta será el archivo JSON **únicamente.**
+2. En el siguiente mensaje te envío ambos planes de gobierno en formato JSON y tu respuesta será nuevo el archivo JSON **únicamente.**

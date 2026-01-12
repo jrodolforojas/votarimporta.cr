@@ -13,12 +13,12 @@ export const fabricioAlvarado: Candidato = {
   ideologia: "Conservadurismo republicado liberal",
   posicionPolitica: "Económicamente Izquierda",
   redesSociales: {
-    twitter: "https://twitter.com/laurafernandez",
-    instagram: "https://instagram.com/laurafernandez",
-    facebook: "https://facebook.com/laurafernandezcr",
-    tiktok: "https://tiktok.com/@laurafernandez",
-    youtube: "https://youtube.com/@laurafernandez",
-    web: "https://laurafernandez.cr",
+    twitter: "https://x.com/FabriAlvarado7",
+    instagram: "https://www.instagram.com/fabricio_alvarado/?hl=es",
+    facebook: "https://www.facebook.com/FabricioAlvaradoCostaRica",
+    tiktok: "https://www.tiktok.com/@fabricio.alvarado?lang=en",
+    youtube: "https://www.youtube.com/@FabricioAlvaradoCR/featured",
+    web: "https://nuevarepublica.cr/",
   },
   logros: [
     "Periodista, conductor y productor en radio y televisión.",
