@@ -1,4 +1,6 @@
 "use client"
+
+import type React from "react"
 import { useParams } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
@@ -118,7 +120,7 @@ export default function CandidatoDetailPage() {
 
       <div className="relative">
         <div
-          className="absolute inset-x-0 top-0 h-48 md:h-64"
+          className="absolute inset-x-0 top-0 h-32 md:h-40"
           style={{
             background: `linear-gradient(to right, ${gradientColors})`,
           }}

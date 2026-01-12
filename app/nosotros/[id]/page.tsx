@@ -42,7 +42,7 @@ export default function CreadorDetailPage() {
       <div className="relative">
         {/* Gradient header - black to white for neutrality */}
         <div
-          className="absolute inset-x-0 top-0 h-48 md:h-64"
+          className="absolute inset-x-0 top-0 h-32 md:h-40"
           style={{
             background: "linear-gradient(to right, #000000, #ffffff)",
           }}
@@ -63,7 +63,7 @@ export default function CreadorDetailPage() {
               <div className="relative aspect-square w-32 shrink-0 overflow-hidden rounded-2xl border-4 border-white shadow-lg md:w-48">
                 <Image src={creador.foto || "/placeholder.svg"} alt={creador.nombre} fill className="object-cover" />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 md:rounded-xl md:bg-background/90 md:p-4 md:backdrop-blur-sm">
                 <Badge className="mb-2 bg-foreground text-background">Creador</Badge>
                 <h1 className="mb-2 text-3xl font-bold md:text-4xl">{creador.nombre}</h1>
                 <div className="mb-4 flex items-center gap-2 text-muted-foreground">
