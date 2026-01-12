@@ -60,7 +60,7 @@ Somos dos costarricenses comprometidos con la democracia:
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="public/rodolfo-rojas.jpg" width="100" height="100" style="border-radius: 50%;" alt="Rodolfo Rojas"><br>
+      <img src="https://github.com/jrodolforojas.png" width="100" height="100" style="border-radius: 50%;" alt="Rodolfo Rojas"><br>
       <strong>Rodolfo Rojas</strong><br>
       <em>Software Engineer & Founder</em><br><br>
       +5 años de experiencia en desarrollo de software. CEO & Founder de Carpil.<br><br>
@@ -68,7 +68,7 @@ Somos dos costarricenses comprometidos con la democracia:
       <a href="https://www.linkedin.com/in/jrodolforojas/">LinkedIn</a>
     </td>
     <td align="center" width="50%">
-      <img src="public/fabian-fonseca.webp" width="100" height="100" style="border-radius: 50%;" alt="Fabián Fonseca"><br>
+      <img src="https://raw.githubusercontent.com/jrodolforojas/votacr2026/main/public/fabian-fonseca.webp" width="100" height="100" style="border-radius: 50%;" alt="Fabián Fonseca"><br>
       <strong>Fabián Fonseca</strong><br>
       <em>Politólogo y Economista</em><br><br>
       Comprometido con el fortalecimiento de la democracia costarricense y la participación ciudadana.<br><br>
@@ -124,8 +124,8 @@ votacr2026/
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/jrodolforojas/votarimporta-cr.git
-cd votarimporta-cr
+git clone https://github.com/jrodolforojas/votacr2026.git
+cd votacr2026
 
 # Instalar dependencias
 pnpm install
@@ -198,7 +198,7 @@ Esto significa que puedes:
 
 - 🎤 Fabián: [@fabianfonsecar1](mailto:fabianfonsecar1@gmail.com)
 - 🤖 Rodolfo: [@jrodolforojas](https://www.instagram.com/jrodolforojas/)
-- 💬 Issues: [GitHub Issues](https://github.com/jrodolforojas/votarimporta-cr/issues)
+- 💬 Issues: [GitHub Issues](https://github.com/jrodolforojas/votacr2026/issues)
 
 ---
 

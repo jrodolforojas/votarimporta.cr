@@ -19,7 +19,7 @@ export default function TransparenciaPage() {
       items: ["Prompts públicos y verificables", "Outputs disponibles para revisión", "Sin sesgos ni opiniones"],
       link: {
         label: "Ver prompts en GitHub",
-        url: "https://github.com/jrodolforojas/votarimporta-cr/tree/main/ai",
+        url: "https://github.com/jrodolforojas/votacr2026/tree/main/ai",
       },
     },
     {
