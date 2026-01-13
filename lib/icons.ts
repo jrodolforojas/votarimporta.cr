@@ -17,6 +17,8 @@ import {
   Landmark,
   Users,
   Vote,
+  ChevronLeftIcon,
+  ChevronRightIcon,
 } from "lucide-react"
 
 export const iconMap: Record<string, React.ElementType> = {
@@ -38,6 +40,8 @@ export const iconMap: Record<string, React.ElementType> = {
   landmark: Landmark,
   users: Users,
   vote: Vote,
+  "chevron-left": ChevronLeftIcon,
+  "chevron-right": ChevronRightIcon,
 }
 
 export const defaultIcon = GraduationCap

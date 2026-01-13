@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useState, useEffect } from "react"
+import React, { useRef, useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 import { iconMap, defaultIcon } from "@/lib/icons"
 import { Area } from "@/lib/data"
@@ -35,21 +35,51 @@ export function AreaFilter({ areas, selectedArea, onSelectArea }: AreaFilterProp
     }
   }, [])
 
+  const scrollLeft = () => {
+    const el = scrollRef.current
+    if (el) {
+      el.scrollBy({ left: -100, behavior: "smooth" })
+    }
+  }
+
+  const scrollRight = () => {
+    const el = scrollRef.current
+    if (el) {
+      el.scrollBy({ left: 100, behavior: "smooth" })
+    }
+  }
+
   return (
-    <div className="relative">
-      {/* Left fade indicator */}
+    <div className="relative md:px-[60px]">
+      {/* Left fade indicator and arrow */}
       {showLeftFade && (
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-8 bg-gradient-to-r from-background to-transparent" />
+        <>
+        <div className="pointer-events-none absolute left-0 md:left-[60px] top-0 z-10 h-full w-8 bg-gradient-to-r from-background to-transparent" />
+        <button
+          onClick={scrollLeft}
+          className="hidden md:block absolute cursor-pointer left-2 top-1/2 z-20 -translate-y-1/2 bg-card p-1 rounded-full shadow-md hover:bg-foreground hover:text-background"
+        >
+          {React.createElement(iconMap['chevron-left'])}
+        </button>
+        </>
       )}
 
-      {/* Right fade indicator */}
+      {/* Right fade indicator and arrow */}
       {showRightFade && (
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-8 bg-gradient-to-l from-background to-transparent" />
+        <>
+        <div className="pointer-events-none absolute right-0 md:right-[60px] top-0 z-10 h-full w-8 bg-gradient-to-l from-background to-transparent" />
+        <button
+          onClick={scrollRight}
+          className="hidden md:block absolute right-2 cursor-pointer top-1/2 z-20 -translate-y-1/2 bg-card p-1 rounded-full shadow-md hover:bg-foreground hover:text-background"
+        >
+           {React.createElement(iconMap['chevron-right'])}
+        </button>
+        </>
       )}
 
       <div
         ref={scrollRef}
-        className="scrollbar-hide flex gap-2 overflow-x-auto pb-2"
+        className="scrollbar-hide flex gap-2 overflow-x-auto"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {/* "Todas" option first */}
