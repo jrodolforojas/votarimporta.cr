@@ -92,7 +92,7 @@ Este proyecto es **100% código abierto**. Creemos en la transparencia total.
 
 ### 📂 Estructura del proyecto
 
-```
+\`\`\`
 votarimporta.cr/
 ├── app/                    # Páginas de Next.js (App Router)
 │   ├── candidatos/         # Páginas de candidatos
@@ -109,7 +109,7 @@ votarimporta.cr/
 │   ├── prompts/            # Prompts utilizados
 │   └── plan-gobierno/      # Resúmenes de planes de gobierno
 └── public/                 # Assets públicos
-```
+\`\`\`
 
 ---
 
@@ -122,7 +122,7 @@ votarimporta.cr/
 
 ### Instalación
 
-```bash
+\`\`\`bash
 # Clonar el repositorio
 git clone https://github.com/jrodolforojas/votarimporta.cr.git
 cd votarimporta.cr
@@ -136,7 +136,7 @@ cp .env.example .env.local
 
 # Correr en desarrollo
 pnpm dev
-```
+\`\`\`
 
 Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
