@@ -1,21 +1,18 @@
 import { ModelMessage } from 'ai'
 import { readFileSync } from 'fs'
 import path from 'path'
-import { generateCandidateContextMessages } from './candidato-contexto-prompt'
+import { generarMensajesContextoCandidato } from './candidato-contexto-prompt'
 import { Candidato } from '@/lib/data'
 
-const basePrompt = readFileSync(path.join(process.cwd(), 'ai', 'prompts', '03-chat-prompt.md'), 'utf8')
+const promptBase = readFileSync(path.join(process.cwd(), 'ai', 'prompts', '03-chat-prompt.md'), 'utf8')
 
-export function getSystemMessages(candidato: Candidato): ModelMessage[] {
-  const baseMessage: ModelMessage = {
+export function obtenerMensajesSistema(candidato: Candidato): ModelMessage[] {
+  const mensajeBase: ModelMessage = {
     role: 'system',
-    content: basePrompt,
+    content: promptBase,
   }
 
-  const candidatoMessages = generateCandidateContextMessages({
-    candidato,
-    propuestas: candidato.propuestas,
-  })
+  const mensajesCandidato = generarMensajesContextoCandidato(candidato, candidato.propuestas)
 
-  return [baseMessage, ...candidatoMessages]
+  return [mensajeBase, ...mensajesCandidato]
 }

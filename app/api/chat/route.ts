@@ -1,6 +1,6 @@
 import { streamText, UIMessage, convertToModelMessages } from 'ai';
 import { candidatos } from '@/data/candidatos';
-import { getSystemMessages } from './prompt';
+import { obtenerMensajesSistema } from './prompt';
 
 export async function POST(req: Request) {
   const { messages, candidatoId }: { messages: UIMessage[]; candidatoId: string } = await req.json();
@@ -11,13 +11,13 @@ export async function POST(req: Request) {
     return new Response('Candidato no encontrado', { status: 404 });
   }
 
-  const systemMessages = getSystemMessages(candidato)
-  const userMessages = await convertToModelMessages(messages)
+  const mensajesSistema = obtenerMensajesSistema(candidato)
+  const mensajesUsuario = await convertToModelMessages(messages)
 
-  const result = streamText({
+  const resultado = streamText({
     model: "openai/gpt-5.2-chat",
-    messages: [...systemMessages, ...userMessages],
+    messages: [...mensajesSistema, ...mensajesUsuario],
   });
 
-  return result.toUIMessageStreamResponse();
+  return resultado.toUIMessageStreamResponse();
 }
