@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Calendar, Clock, PlayCircle, Radio, Tv, Video } from "lucide-react"
 import type { Debate } from "@/lib/data"
 import {
@@ -18,11 +18,26 @@ interface DebateCardProps {
 export function DebateCard({ debate }: DebateCardProps) {
   const [showCalendarOptions, setShowCalendarOptions] = useState(false)
   const [imageError, setImageError] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
   const status = getDebateStatus(debate)
   const dateInfo = formatDebateDate(debate.dateIso)
   const isPast = status === "completed"
   const isLive = status === "live"
   const isRadio = debate.channels.some((c) => c.toLowerCase().includes("radio"))
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowCalendarOptions(false)
+      }
+    }
+
+    if (showCalendarOptions) {
+      document.addEventListener("mousedown", handleClickOutside)
+      return () => document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [showCalendarOptions])
 
   const handleAddToCalendar = () => {
     setShowCalendarOptions(!showCalendarOptions)
@@ -162,7 +177,7 @@ export function DebateCard({ debate }: DebateCardProps) {
           )}
 
           {!isPast && !isLive && !dateInfo.isTbd && (
-            <div className="relative">
+            <div className="relative" ref={dropdownRef}>
               <button
                 onClick={handleAddToCalendar}
                 className="flex w-full items-center justify-center gap-2 rounded-lg border border-blue-300 bg-blue-100 py-2.5 text-sm font-bold text-blue-800 transition-colors hover:bg-blue-200 dark:border-blue-700 dark:bg-blue-950/50 dark:text-blue-400 dark:hover:bg-blue-950"

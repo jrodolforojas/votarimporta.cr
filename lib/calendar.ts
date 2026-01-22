@@ -1,13 +1,22 @@
 import type { Debate } from "./data"
 
 /**
- * Calculates days until a debate
+ * Calculates days until a debate (comparing calendar dates, not exact times)
  */
 export function getDaysUntil(dateIso: string): number {
   const now = new Date()
   const debateDate = new Date(dateIso)
-  const diffTime = debateDate.getTime() - now.getTime()
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+
+  // Normalize both dates to midnight in Costa Rica timezone for accurate day comparison
+  const timezone = "America/Costa_Rica"
+  const nowDateStr = now.toLocaleDateString("en-CA", { timeZone: timezone })
+  const debateDateStr = debateDate.toLocaleDateString("en-CA", { timeZone: timezone })
+
+  const nowMidnight = new Date(nowDateStr + "T00:00:00")
+  const debateMidnight = new Date(debateDateStr + "T00:00:00")
+
+  const diffTime = debateMidnight.getTime() - nowMidnight.getTime()
+  const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24))
   return diffDays
 }
 

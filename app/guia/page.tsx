@@ -4,6 +4,7 @@ import Link from "next/link"
 import { MobileNav } from "@/components/mobile-nav"
 import { Card, CardContent } from "@/components/ui/card"
 import { candidatos } from "@/data/candidatos"
+import { getDaysUntilElection, getElectionStatus } from "@/lib/election"
 import {
   Clock,
   MapPin,
@@ -15,11 +16,14 @@ import {
   FileText,
   BookOpen,
   ExternalLink,
+  Timer,
 } from "lucide-react"
 
 const TSE_URL = "https://www.tse.go.cr/dondevotar/donde-votar.aspx"
 
 export default function GuiaPage() {
+  const days = getDaysUntilElection()
+  const status = getElectionStatus()
   return (
     <div className="min-h-screen pb-20 md:pb-0">
       <MobileNav />
@@ -38,6 +42,20 @@ export default function GuiaPage() {
             <p className="mt-2 text-muted-foreground">
               Tu manual de bolsillo para las Elecciones Nacionales. Preparate en 2 minutos.
             </p>
+
+            {/* Dynamic Countdown */}
+            {status === "upcoming" && (
+              <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-amber-100 border border-amber-200 text-amber-800 px-4 py-2 dark:bg-amber-950 dark:border-amber-800 dark:text-amber-300">
+                <Timer className="h-5 w-5" />
+                <span className="text-lg font-bold">Faltan {days} dias</span>
+              </div>
+            )}
+            {status === "today" && (
+              <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-800 px-4 py-2 animate-pulse dark:bg-emerald-950 dark:border-emerald-800 dark:text-emerald-300">
+                <Timer className="h-5 w-5" />
+                <span className="text-lg font-bold">HOY ES EL DIA</span>
+              </div>
+            )}
           </div>
 
           {/* Key Info Cards */}

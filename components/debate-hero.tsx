@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Calendar, Clock, Tv, Radio, Video } from "lucide-react"
 import type { Debate } from "@/lib/data"
 import {
@@ -19,7 +19,22 @@ interface DebateHeroProps {
 export function DebateHero({ debate }: DebateHeroProps) {
   const [showCalendarOptions, setShowCalendarOptions] = useState(false)
   const [imageError, setImageError] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
   const status = getDebateStatus(debate)
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowCalendarOptions(false)
+      }
+    }
+
+    if (showCalendarOptions) {
+      document.addEventListener("mousedown", handleClickOutside)
+      return () => document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [showCalendarOptions])
   const dateInfo = formatDebateDate(debate.dateIso)
   const countdownText = getCountdownText(debate.dateIso)
   const isLive = status === "live"
@@ -112,7 +127,7 @@ export function DebateHero({ debate }: DebateHeroProps) {
           {/* Right: Countdown & CTA */}
           <div className="flex flex-col items-start gap-3 md:items-end">
             <div className="rounded-lg bg-white/15 px-4 py-2">
-              <span className="font-mono text-lg font-semibold text-blue-200 md:text-xl">
+              <span className="text-lg font-bold text-blue-200 md:text-xl">
                 {countdownText}
               </span>
             </div>
@@ -128,7 +143,7 @@ export function DebateHero({ debate }: DebateHeroProps) {
                 VER EN VIVO
               </a>
             ) : !dateInfo.isTbd ? (
-              <div className="relative">
+              <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={handleAddToCalendar}
                   className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-bold text-slate-900 shadow-lg transition-all hover:bg-slate-100 hover:shadow-xl"
@@ -138,7 +153,7 @@ export function DebateHero({ debate }: DebateHeroProps) {
                 </button>
 
                 {showCalendarOptions && (
-                  <div className="absolute right-0 top-full z-10 mt-2 min-w-[200px] rounded-lg border-2 border-slate-200 bg-white p-2 shadow-xl">
+                  <div className="absolute bottom-full right-0 z-10 mb-2 min-w-[200px] rounded-lg border-2 border-slate-200 bg-white p-2 shadow-xl">
                     <button
                       onClick={handleGoogleCalendar}
                       className="w-full rounded px-3 py-2 text-left text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100"
