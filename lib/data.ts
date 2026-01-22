@@ -81,20 +81,3 @@ export interface Quiz {
   id: string
   preguntas: QuizRespuesta[]
 }
-
-// Debate types
-export type DebateStatus = "upcoming" | "live" | "completed" | "cancelled"
-
-export interface Debate {
-  id: string
-  hostName: string
-  hostLogoUrl: string
-  dateIso: string
-  channels: string[]
-  status: DebateStatus
-  links: {
-    liveStream?: string
-    replay?: string
-  }
-  notes?: string
-}
