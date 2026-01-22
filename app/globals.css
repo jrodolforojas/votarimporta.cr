@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
+  --background: oklch(0.98 0.002 60);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -28,7 +28,7 @@
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
+  --radius: 1rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -132,4 +132,85 @@
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* Mesh gradient orbs for hero */
+.hero-orb-blue {
+  position: absolute;
+  top: -5rem;
+  right: -5rem;
+  width: 600px;
+  height: 600px;
+  background: oklch(0.9 0.05 250 / 0.6);
+  border-radius: 9999px;
+  filter: blur(100px);
+  opacity: 0.7;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.hero-orb-warm {
+  position: absolute;
+  bottom: -10rem;
+  left: -5rem;
+  width: 500px;
+  height: 500px;
+  background: oklch(0.95 0.02 25 / 0.5);
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.6;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* Subtle grain texture overlay */
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+/* Costa Rica topographic pattern */
+.hero-topo {
+  position: absolute;
+  inset: 0;
+  background-image: url('/textures/costa-rica-topo.svg');
+  background-size: 400px;
+  background-repeat: repeat;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+/* News banner animations */
+@keyframes banner-slide-in {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes banner-slide-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.banner-enter {
+  animation: banner-slide-in 300ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.banner-exit {
+  animation: banner-slide-out 200ms cubic-bezier(0.4, 0, 1, 1) forwards;
 }
