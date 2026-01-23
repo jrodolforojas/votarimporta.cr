@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { MobileNav } from "@/components/mobile-nav"
@@ -9,7 +10,27 @@ import { TemasKlave } from "@/components/temas-clave"
 import { candidatos } from "@/data/candidatos"
 import { Github, Info, Users, HelpCircle } from "lucide-react"
 
+const ROTATING_PHRASES = [
+  "el futuro",
+  "el cambio",
+  "Costa Rica",
+  "el rumbo",
+  "la democracia",
+  "la justicia",
+  "la igualdad",
+  "la paz",
+]
+
 export default function HomePage() {
+  const [phraseIndex, setPhraseIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPhraseIndex((prev) => (prev + 1) % ROTATING_PHRASES.length)
+    }, 2500)
+    return () => clearInterval(interval)
+  }, [])
+
   const scrollToCandidatos = () => {
     const element = document.getElementById("candidatos")
     if (element) {
@@ -46,8 +67,11 @@ export default function HomePage() {
             </div>
             <h1 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl leading-[1.15]">
               Tu voto decide{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-900">
-                el futuro
+              <span
+                key={phraseIndex}
+                className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-900 animate-in fade-in-0 duration-500"
+              >
+                {ROTATING_PHRASES[phraseIndex]}
               </span>
             </h1>
             <p className="mb-6 max-w-lg text-base md:text-lg text-muted-foreground text-pretty mx-auto sm:mx-0">
