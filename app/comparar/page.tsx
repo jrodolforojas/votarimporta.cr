@@ -43,11 +43,11 @@ function CandidateSelector({
   const secondCandidate = selectedCandidatos[1] || null
   const additionalCandidates = selectedCandidatos.slice(2)
 
-  const CandidateBox = ({ 
-    index, 
-    candidato, 
-    placeholder 
-  }: { 
+  const CandidateBox = ({
+    index,
+    candidato,
+    placeholder
+  }: {
     index: number
     candidato: Candidato | null
     placeholder: string
@@ -68,8 +68,8 @@ function CandidateSelector({
                     className="object-cover"
                   />
                 </div>
-                <Badge 
-                  style={{ backgroundColor: candidato.color }} 
+                <Badge
+                  style={{ backgroundColor: candidato.color }}
                   className="text-white text-xs mb-1"
                 >
                   {candidato.partidoSiglas}
@@ -119,14 +119,14 @@ function CandidateSelector({
           </button>
         )}
       </div>
-      
+
       {/* Layout changes based on number of candidates */}
       {selectedCandidatos.length <= 2 ? (
         /* First two candidates with VS - only when exactly 2 or less */
         <div className="flex items-center gap-3 md:gap-4">
           {/* First candidate */}
           <div className="flex-1 relative">
-            <CandidateBox 
+            <CandidateBox
               index={0}
               candidato={firstCandidate}
               placeholder="Primer candidato"
@@ -151,7 +151,7 @@ function CandidateSelector({
 
           {/* Second candidate */}
           <div className="flex-1 relative">
-            <CandidateBox 
+            <CandidateBox
               index={1}
               candidato={secondCandidate}
               placeholder="Segundo candidato"
@@ -196,7 +196,7 @@ function CandidateSelector({
         <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
           {selectedCandidatos.map((candidato, index) => (
             <div key={candidato.id} className="relative">
-              <CandidateBox 
+              <CandidateBox
                 index={index}
                 candidato={candidato}
                 placeholder={index === 0 ? "Primer candidato" : index === 1 ? "Segundo candidato" : `Candidato ${index + 1}`}
@@ -417,11 +417,11 @@ function AreaSelector({
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-[calc(100vw-2rem)] max-h-64 overflow-y-auto">
-          {areas.map((area) => {
-            const Icon = iconMap[area.icon] || defaultIcon
-            const isSelected = selectedArea === area.area
-            return (
-              <DropdownMenuItem
+            {areas.map((area) => {
+              const Icon = iconMap[area.icon] || defaultIcon
+              const isSelected = selectedArea === area.area
+              return (
+                <DropdownMenuItem
                   key={area.area}
                   onClick={() => onSelect(area.area)}
                   className="flex items-center gap-3 p-3"
@@ -468,6 +468,14 @@ export default function CompararPage() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  // Auto-select a random area when at least 2 candidates are selected
+  useEffect(() => {
+    if (selectedCandidatos.length >= 2 && selectedArea === null) {
+      const randomArea = areas[Math.floor(Math.random() * areas.length)]
+      setSelectedArea(randomArea.area)
+    }
+  }, [selectedCandidatos.length, selectedArea])
 
   const showComparison = selectedCandidatos.length >= 2 && selectedArea
 
