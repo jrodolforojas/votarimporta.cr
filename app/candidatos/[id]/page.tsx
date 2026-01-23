@@ -131,11 +131,10 @@ export default function CandidatoDetailPage() {
             <Button
               asChild
               variant="ghost"
-              className={`mb-4 -ml-2 ${
-                firstColorIsLight
-                  ? "text-foreground hover:bg-black/10 hover:text-foreground"
-                  : "text-white hover:bg-white/20 hover:text-white"
-              }`}
+              className={`mb-4 -ml-2 ${firstColorIsLight
+                ? "text-foreground hover:bg-black/10 hover:text-foreground"
+                : "text-white hover:bg-white/20 hover:text-white"
+                }`}
             >
               <Link href="/#candidatos">
                 <ArrowLeft className="mr-2 h-4 w-4" />
@@ -158,12 +157,7 @@ export default function CandidatoDetailPage() {
                 </Badge>
                 <h1 className="mb-2 text-3xl font-bold md:text-4xl">{candidato.nombre}</h1>
                 <div className="mb-4 flex flex-wrap gap-2">
-                  {/* <Badge variant="secondary">{candidato.posicionPolitica}</Badge> */}
                   <Badge variant="outline">{candidato.ideologia}</Badge>
-                </div>
-                <div className="mb-4 flex items-center gap-2 text-muted-foreground">
-                  <Briefcase className="h-4 w-4" />
-                  <span>{candidato.ocupacion}</span>
                 </div>
                 <p className="text-muted-foreground">{candidato.bio}</p>
 
@@ -181,21 +175,6 @@ export default function CandidatoDetailPage() {
 
       <div className="px-4" ref={propuestasRef}>
         <div className="mx-auto max-w-4xl">
-          <div className="mb-8">
-            <div
-              className={`grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 ${shouldCenterLogros ? "sm:flex sm:justify-start sm:gap-4" : ""}`}
-            >
-              {candidato.logros.map((logro, index) => (
-                <Card key={index} className={`transition-all hover:shadow-md ${shouldCenterLogros ? "sm:w-64" : ""}`}>
-                  <CardContent className="p-4 text-center">
-                    <Trophy className="mx-auto mb-2 h-6 w-6 text-foreground" />
-                    <p className="text-sm">{logro}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
           <div>
             <h2 className="mb-4 text-2xl font-bold">Propuestas por Área</h2>
 
@@ -215,9 +194,8 @@ export default function CandidatoDetailPage() {
                     <div key={area.area}>
                       {!isExpanded ? (
                         <Card
-                          className={`cursor-pointer transition-all hover:shadow-md ${
-                            hasProposals ? "hover:border-foreground/20" : "opacity-50"
-                          }`}
+                          className={`cursor-pointer transition-all hover:shadow-md ${hasProposals ? "hover:border-foreground/20" : "opacity-50"
+                            }`}
                           onClick={() => hasProposals && toggleArea(area.area)}
                         >
                           <CardContent className="flex items-center gap-3 p-4">
@@ -329,6 +307,22 @@ export default function CandidatoDetailPage() {
                 })}
               </div>
             )}
+          </div>
+
+          <div className="mt-8">
+            <h2 className="mb-4 text-2xl font-bold">Principales Logros</h2>
+            <div
+              className={`grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 ${shouldCenterLogros ? "sm:flex sm:justify-start sm:gap-4" : ""}`}
+            >
+              {candidato.logros.map((logro, index) => (
+                <Card key={index} className={`transition-all hover:shadow-md ${shouldCenterLogros ? "sm:w-64" : ""}`}>
+                  <CardContent className="p-4 text-center">
+                    <Trophy className="mx-auto mb-2 h-6 w-6 text-foreground" />
+                    <p className="text-sm">{logro}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </div>
