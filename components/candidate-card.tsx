@@ -73,12 +73,6 @@ export function CandidateCard({ candidato }: CandidateCardProps) {
               >
                 {candidato.nombre}
               </h3>
-              {/* Profession/Occupation */}
-              <p
-                className={`text-xs truncate transition-colors duration-300 ${isHovered ? "text-white/70" : "text-muted-foreground"}`}
-              >
-                {candidato.ocupacion}
-              </p>
             </Link>
 
             {/* Tags/badges and Quick Actions */}
